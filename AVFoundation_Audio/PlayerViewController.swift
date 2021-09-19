@@ -2,31 +2,35 @@
 //  PlayerViewController.swift
 //  AVFoundation_Audio
 //
-//  Created by Misha on 13.08.2021.
+//  Created by Misha on 16.09.2021.
 //
 
+import Foundation
 import UIKit
-
 import youtube_ios_player_helper
 
 class PlayerViewController: UIViewController {
     
-    @IBOutlet weak var playerViewTwo: YTPlayerView!
+    @IBOutlet weak var player: YTPlayerView!
+    
+    var selectedVideo: String
+    
+    init?(coder: NSCoder, selectedVideo: String) {
+        self.selectedVideo = selectedVideo
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("You must create this view controller with a string.")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerViewTwo.load(withVideoId: "i12CvB_eWas")
-        //playerView.load(withVideoId: "i12CvB_eWas")
+        
+        view.backgroundColor = .white
+        
+        player?.load(withVideoId: selectedVideo)
+        
     }
-        
-
-        
-//        let videoURL = URL(string: "")
-//        let player = AVPlayer(url: videoURL!)
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        self.present(playerViewController, animated: true) {
-//            playerViewController.player!.play()
-//        }
     
 }

@@ -22,8 +22,7 @@
 		C65CDBE926C546D000FE7C52 /* Мое небо 2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C65CDBE826C546D000FE7C52 /* Мое небо 2.mp3 */; };
 		C65CDBEF26C66E2A00FE7C52 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CDBEE26C66E2A00FE7C52 /* VideoTableViewCell.swift */; };
 		C65CDBF126C67FD900FE7C52 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CDBF026C67FD900FE7C52 /* VideoViewController.swift */; };
-		C65CDBF326C68A5400FE7C52 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CDBF226C68A5400FE7C52 /* PlayerViewController.swift */; };
-		C65CDBF526C6A6F700FE7C52 /* Player2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65CDBF426C6A6F700FE7C52 /* Player2ViewController.swift */; };
+		C6A0A90B26F33F2900FE6DAE /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A0A90A26F33F2900FE6DAE /* PlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,8 +58,7 @@
 		C65CDBE826C546D000FE7C52 /* Мое небо 2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Мое небо 2.mp3"; sourceTree = "<group>"; };
 		C65CDBEE26C66E2A00FE7C52 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		C65CDBF026C67FD900FE7C52 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		C65CDBF226C68A5400FE7C52 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
-		C65CDBF426C6A6F700FE7C52 /* Player2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player2ViewController.swift; sourceTree = "<group>"; };
+		C6A0A90A26F33F2900FE6DAE /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +105,10 @@
 				15B5622425DE323700D5B871 /* AppDelegate.swift */,
 				15B5622625DE323700D5B871 /* SceneDelegate.swift */,
 				15B5622825DE323700D5B871 /* ViewController.swift */,
-				15B5622A25DE323700D5B871 /* Main.storyboard */,
 				C65CDBF026C67FD900FE7C52 /* VideoViewController.swift */,
+				C6A0A90A26F33F2900FE6DAE /* PlayerViewController.swift */,
+				15B5622A25DE323700D5B871 /* Main.storyboard */,
 				C65CDBEE26C66E2A00FE7C52 /* VideoTableViewCell.swift */,
-				C65CDBF226C68A5400FE7C52 /* PlayerViewController.swift */,
-				C65CDBF426C6A6F700FE7C52 /* Player2ViewController.swift */,
 				15B5622D25DE323900D5B871 /* Assets.xcassets */,
 				15B5622F25DE323900D5B871 /* LaunchScreen.storyboard */,
 				15B5623925DE3FDE00D5B871 /* Music */,
@@ -262,12 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				15B5622925DE323700D5B871 /* ViewController.swift in Sources */,
-				C65CDBF526C6A6F700FE7C52 /* Player2ViewController.swift in Sources */,
 				C65CDBF126C67FD900FE7C52 /* VideoViewController.swift in Sources */,
 				15B5622525DE323700D5B871 /* AppDelegate.swift in Sources */,
 				15B5622725DE323700D5B871 /* SceneDelegate.swift in Sources */,
 				C65CDBEF26C66E2A00FE7C52 /* VideoTableViewCell.swift in Sources */,
-				C65CDBF326C68A5400FE7C52 /* PlayerViewController.swift in Sources */,
+				C6A0A90B26F33F2900FE6DAE /* PlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,60 +7,68 @@
 
 import UIKit
 import AVKit
+import youtube_ios_player_helper
+
+struct Video {
+    let title: String
+    let id: String
+}
 
 class VideoViewController: UIViewController {
+ 
+    private let data: [Video] = [
+        Video(title: "Video1", id: "8Tl1RL8MRCA"),
+        Video(title: "Video2", id: "5L4DQfVIcdg"),
+        Video(title: "Video3", id: "H9154xIoYTA"),
+        Video(title: "Video4", id: "07d2dXHYb94"),
+        Video(title: "Video5", id: "9MO1aY1xC80"),
+    ]
     
-    private let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.register(VideoTableViewCell.self, forCellReuseIdentifier: VideoTableViewCell.identifier)
-        return tableView
-    }()
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
+        
         tableView.delegate = self
-        view.addSubview(tableView)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
+        tableView.dataSource = self
     }
     
 }
 
-extension VideoViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+extension VideoViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //YOUTUBE HELPER
+        let video = data[indexPath.row].id
+        
+        guard let playerViewController = storyboard?.instantiateViewController(identifier: "player", creator: { coder in
+            return PlayerViewController(coder: coder, selectedVideo: video)
+        }) else {
+            fatalError("Failed to load EditUserViewController from storyboard.")
+        }
+        present(playerViewController, animated: true, completion: nil)
+            
     }
+    
+}
 
+extension VideoViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier, for: indexPath) as? VideoTableViewCell else { return UITableViewCell() }
-        cell.configure(text: "Video \(indexPath.row + 1)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        
+        cell.textLabel?.text = data[indexPath.row].title
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if indexPath.row == 0 {
-            let playerViewController = PlayerViewController()
-            present(playerViewController, animated: true, completion: nil)
-        }
-        
-        if indexPath.row == 1 {
-            let player2ViewController = Player2ViewController()
-            present(player2ViewController, animated: true, completion: nil)
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
-    }
 }
-
-
